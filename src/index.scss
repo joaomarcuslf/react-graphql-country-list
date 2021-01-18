@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+@import "../node_modules/bulma/bulma.sass";
+
+.is-fullwidth {
+    width: 100%;
+}
+
+.is-justified-center {
+    justify-content: center;
+}
+
+.hero-body {
+    display: flex;
+    height: 100%;
+    align-items: flex-start !important;
+}
+
+.country-view {
+    background: #dedede22;
+    border: 1.5px solid #aeaeae;
+    opacity: .7;
+    cursor: pointer;
+    border-radius: 45px;
+    padding: 10px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: opacity 1s ease-in;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .country-flag, .country-flag img {
+        min-height: 120px;
+        width: 230px;
+    }
+
+    .country-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        * {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

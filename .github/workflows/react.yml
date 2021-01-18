@@ -1,0 +1,30 @@
+name: React
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install modules
+      run: |
+        yarn
+    - name: Run lint
+      run: |
+        yarn lint
+    - name: Run tests
+      run: |
+        yarn test
+
+    - name: Build App
+      run: |
+        CI=false yarn build
+
+    - name: Deploy to Surge
+      run:  yarn surge ./build https://someawsomeurl.surge.sh/ --token ${{secrets.TOKEN}}
