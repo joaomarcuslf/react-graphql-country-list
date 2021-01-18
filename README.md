@@ -2,4 +2,3 @@
 
 
 ![Actions Workflow](https://github.com/joaomarcuslf2/react-graphql-country-list/workflows/React/badge.svg)
-## How to Start Development![Actions Workflow](https://github.com/joaomarcuslf2/react-graphql-country-list/workflows/React/badge.svg)

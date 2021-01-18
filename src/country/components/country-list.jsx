@@ -23,7 +23,7 @@ const CountryList = ({ countries = [], searchTerm = '' }) => (
         );
       })
       : (
-        <h1 className="title">
+        <h1 className="title has-test-centered">
           No Country to Show
         </h1>
       )}
