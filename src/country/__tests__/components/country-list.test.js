@@ -48,3 +48,22 @@ test('renders message if not country is present', () => {
   const messageElement = screen.queryByText('No Country to Show');
   expect(messageElement).toBeInTheDocument();
 });
+
+test('renders message if no country match the search', () => {
+  render(<CountryList
+    countries={[
+      { name: 'Country 01', capital: 'Capital 01', flag: { svg: '' } },
+      { name: 'Country 02', capital: 'Capital 02', flag: { svg: '' } },
+    ]}
+    searchTerm="Country 03"
+  />);
+
+  const countryElement01 = screen.queryByText('Country 01');
+  expect(countryElement01).toBeNull();
+
+  const countryElement02 = screen.queryByText('Country 02');
+  expect(countryElement02).toBeNull();
+
+  const messageElement = screen.queryByText('No Country to Show');
+  expect(messageElement).toBeInTheDocument();
+});

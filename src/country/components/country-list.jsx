@@ -1,14 +1,21 @@
 import React from 'react';
 
-const CountryList = ({ countries = [], searchTerm = '' }) => (
-  <div className="columns is-multiline">
-    {countries.length > 0
-      ? countries.map((country) => {
-        if (searchTerm && !country.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return null;
-        }
+/* @TODO: write tests for this function */
+export const filterCountries = (countries = [], searchTerm = '') => {
+  if (!searchTerm) {
+    return countries;
+  }
 
-        return (
+  return countries.filter((country) => country.name.toLowerCase().includes(searchTerm.toLowerCase()));
+};
+
+const CountryList = ({ countries = [], searchTerm = '' }) => {
+  const countriesToShow = filterCountries(countries, searchTerm);
+
+  return (
+    <div className="columns is-multiline">
+      {countriesToShow.length > 0
+        ? filterCountries(countries, searchTerm).map((country) => (
           <article className="column country-view" key={country.name}>
             <figure className="country-flag">
               <img src={country.flag.svgFile} alt={`${country.name} Flag`} />
@@ -20,14 +27,15 @@ const CountryList = ({ countries = [], searchTerm = '' }) => (
               <small className="subtitle">{country.capital}</small>
             </div>
           </article>
-        );
-      })
-      : (
-        <h1 className="title has-test-centered">
-          No Country to Show
-        </h1>
-      )}
-  </div>
-);
-
+        ))
+        : (
+          <div className="column has-text-centered">
+            <h3 className="subtitle has-text-centered">
+              No Country to Show
+            </h3>
+          </div>
+        )}
+    </div>
+  );
+};
 export default CountryList;
