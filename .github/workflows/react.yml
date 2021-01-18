@@ -27,4 +27,4 @@ jobs:
         CI=false yarn build
 
     - name: Deploy to Surge
-      run:  yarn surge ./build https://someawsomeurl.surge.sh/ --token ${{secrets.TOKEN}}
+      run:  yarn surge ./build https://successful-bath.surge.sh/ --token ${{secrets.TOKEN}}
