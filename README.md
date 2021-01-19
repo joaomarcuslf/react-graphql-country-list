@@ -18,7 +18,7 @@
 
 ## How to deploy:
 
-Sou need surge token and token
+You will need surge token and token
 
 ```sh
  $ yarn build
