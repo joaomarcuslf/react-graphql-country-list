@@ -83,7 +83,6 @@ test('applyMutations: should apply the mutations if it matches', () => {
   ]);
 });
 
-
 test('applyMutations: should apply multiple mutations if it matches', () => {
   const countries = applyMutations([
     {
