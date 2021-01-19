@@ -10,13 +10,15 @@ const InputField = ({
       <div className="control">
         <input
           id={id}
-          className="input"
+          className={`input ${!value ? 'is-danger' : 'is-primary'}`}
           type={type}
           placeholder={placeholder}
           value={value}
           onChange={(evt) => onChange(evt.target.value)}
         />
       </div>
+
+      {!value && <p className="help is-danger">This field is required</p>}
     </label>
   </div>
 );

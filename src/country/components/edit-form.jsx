@@ -17,7 +17,7 @@ const EditForm = ({
   const [populationDensityValue, populationDensityChanger] = React.useState(get(selected, ['populationDensity']));
 
   return (
-    <>
+    <form>
       <div className="columns is-multiline">
         <article className="column is-12 is-flex is-justified-center" key={get(selected, ['name'])}>
           <figure className="country-flag">
@@ -79,6 +79,7 @@ const EditForm = ({
             text: 'Save',
             className: 'is-info',
             type: 'submit',
+            disabled: !(nameValue && capitalValue && areaValue && populationDensityValue),
             handler: () => {
               saveCountry({
                 ...selected,
@@ -93,7 +94,7 @@ const EditForm = ({
           },
         ]}
       />
-    </>
+    </form>
   );
 };
 export default EditForm;

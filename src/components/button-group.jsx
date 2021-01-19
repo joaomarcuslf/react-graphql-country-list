@@ -8,6 +8,7 @@ const ButtonGroup = ({ groups }) => (
           type={button.type || 'button'}
           className={`button is-medium is-fullwidth ${button.className || 'is-info'}`}
           onClick={button.handler}
+          disabled={button.disabled}
         >
           {button.text}
         </button>
