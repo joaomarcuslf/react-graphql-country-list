@@ -23,7 +23,7 @@ export const fetchCountries = () => fetchGraphQl(`${BASE_URL}`,
               latitude
               longitude
             }
-            numericCode
+            alpha2Code
             subregion {
               name
               region {

@@ -1,9 +1,11 @@
 import React from 'react';
 
-const CountryEdit = () => (
-  <div>
-        Hello Edit
+import CountryEdit from '../containers/country-edit';
+
+const CountryEditPage = () => (
+  <div className="container">
+    <CountryEdit />
   </div>
 );
 
-export default CountryEdit;
+export default CountryEditPage;

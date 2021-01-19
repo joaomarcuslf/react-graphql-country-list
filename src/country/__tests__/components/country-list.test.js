@@ -10,11 +10,9 @@ test('renders a list', () => {
   ]}
   />);
 
-  const countryElement01 = screen.queryByText('Country 01');
-  expect(countryElement01).toBeInTheDocument();
+  expect(screen.queryByText('Country 01')).toBeInTheDocument();
 
-  const countryElement02 = screen.queryByText('Country 02');
-  expect(countryElement02).toBeInTheDocument();
+  expect(screen.queryByText('Country 02')).toBeInTheDocument();
 });
 
 test('renders only the matches if search term is provided', () => {
@@ -26,11 +24,9 @@ test('renders only the matches if search term is provided', () => {
     searchTerm="Country 01"
   />);
 
-  const countryElement01 = screen.queryByText('Country 01');
-  expect(countryElement01).toBeInTheDocument();
+  expect(screen.queryByText('Country 01')).toBeInTheDocument();
 
-  const countryElement02 = screen.queryByText('Country 02');
-  expect(countryElement02).toBeNull();
+  expect(screen.queryByText('Country 02')).toBeNull();
 });
 
 test('renders message if not country is present', () => {
@@ -39,14 +35,11 @@ test('renders message if not country is present', () => {
     searchTerm="Country 01"
   />);
 
-  const countryElement01 = screen.queryByText('Country 01');
-  expect(countryElement01).toBeNull();
+  expect(screen.queryByText('Country 01')).toBeNull();
 
-  const countryElement02 = screen.queryByText('Country 02');
-  expect(countryElement02).toBeNull();
+  expect(screen.queryByText('Country 02')).toBeNull();
 
-  const messageElement = screen.queryByText('No Country to Show');
-  expect(messageElement).toBeInTheDocument();
+  expect(screen.queryByText('No Country to Show')).toBeInTheDocument();
 });
 
 test('renders message if no country match the search', () => {
@@ -58,12 +51,9 @@ test('renders message if no country match the search', () => {
     searchTerm="Country 03"
   />);
 
-  const countryElement01 = screen.queryByText('Country 01');
-  expect(countryElement01).toBeNull();
+  expect(screen.queryByText('Country 01')).toBeNull();
 
-  const countryElement02 = screen.queryByText('Country 02');
-  expect(countryElement02).toBeNull();
+  expect(screen.queryByText('Country 02')).toBeNull();
 
-  const messageElement = screen.queryByText('No Country to Show');
-  expect(messageElement).toBeInTheDocument();
+  expect(screen.queryByText('No Country to Show')).toBeInTheDocument();
 });
