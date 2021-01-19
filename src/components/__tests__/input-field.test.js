@@ -22,7 +22,7 @@ test('renders the input as given (with value)', () => {
   expect(input._valueTracker.getValue()).toBe('Test Value');
 });
 
-test('renders the input as given (withou value)', () => {
+test('renders error if no value is provided', () => {
   render(
     <InputField
       id="testingField"
@@ -34,10 +34,5 @@ test('renders the input as given (withou value)', () => {
     />,
   );
 
-  expect(screen.getByText('Test Text')).toBeInTheDocument();
-
-  const input = screen.getByLabelText('Test Text');
-
-  expect(input.placeholder).toBe('Test Placeholder');
-  expect(input._valueTracker.getValue()).toBe('');
+  expect(screen.queryByText('This field is required')).toBeInTheDocument();
 });
