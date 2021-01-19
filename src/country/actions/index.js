@@ -35,7 +35,6 @@ export const getCountries = () => (dispatch) => {
       return data;
     })
     .catch((error) => {
-      debugger;
       dispatch(fetchCountriesError(error));
       return error;
     });
